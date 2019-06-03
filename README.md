@@ -37,7 +37,7 @@ The service can be run with the following command:
 
 To use your Fluentd forwarder by Docker containers you need to specify log-driver options for them:
 
-```$ docker run --log-driver=fluentd --log-opt fluentd-address=localhost:24224 nginx```
+```$ docker run --log-driver=fluentd --log-opt fluentd-address=localhost:24224 IMAGE_NAME```
 
 One can always set those options in the [docker deamon configuration](daemon.json) so that every container run on the host use them:
 
@@ -55,8 +55,8 @@ Also logging driver can be set in the Docker Compose configuration:
 version: "3"
 
 services:
-  nginx:
-    image: nginx:stable
+  SERVICE_NAME:
+    image: SERVICE_IMAGE
     logging:
       driver: fluentd
       options:
