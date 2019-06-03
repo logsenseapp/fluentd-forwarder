@@ -5,7 +5,7 @@ The following Logsense forwarder image can be used to set up your fluentd forwar
 It can be run as follow:
 ```
 $ docker run \
-  --env LOGSENSE_TOKEN="your logsense token" \
+  --env "LOGSENSE_TOKEN=your logsense token" \
   -p 127.0.0.1:24224:24224 \
   logsenseapp/fluentd-forwarder
 ```
@@ -23,7 +23,7 @@ services:
   logsense-forwarder:
     image: logsenseapp/fluentd-forwarder
     environment:
-      - LOGSENSE_TOKEN="your logsense token"
+      - "LOGSENSE_TOKEN=your logsense token"
     ports:
       - "127.0.0.1:24224:24224"
 ```
